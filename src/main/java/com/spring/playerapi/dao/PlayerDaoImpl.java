@@ -3,13 +3,13 @@ package com.spring.playerapi.dao;
 import com.spring.playerapi.model.Player;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
 //DAO Layer
-@Service
+@Repository
 public class PlayerDaoImpl implements PlayerDAO{
 
     private EntityManager entityManager;

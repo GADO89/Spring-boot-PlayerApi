@@ -1,10 +1,11 @@
-package com.spring.playerapi.dao;
+package com.spring.playerapi.service;
 
+import com.spring.playerapi.dao.PlayerDAO;
 import com.spring.playerapi.model.Player;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-public interface PlayerDAO {
-
+public interface PlayerService {
 
     public List<Player> getPlayers();
 
