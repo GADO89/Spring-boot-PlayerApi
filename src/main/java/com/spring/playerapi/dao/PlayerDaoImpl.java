@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+
+//DAO Layer
 @Service
 public class PlayerDaoImpl implements PlayerDAO{
 
