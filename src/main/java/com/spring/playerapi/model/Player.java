@@ -1,10 +1,11 @@
 package com.spring.playerapi.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -28,7 +29,7 @@ public class Player {
     private String address;
     @Column(name = "player_phone")
     private String phone;
-    
+
     public int getId() {
         return id;
     }
