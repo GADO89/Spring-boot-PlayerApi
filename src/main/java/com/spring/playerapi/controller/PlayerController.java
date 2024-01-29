@@ -3,11 +3,12 @@ package com.spring.playerapi.controller;
 import com.spring.playerapi.model.Player;
 import com.spring.playerapi.service.PlayerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@RestController
-@RequestMapping("/api")
+@Controller
 public class PlayerController {
 
     private PlayerServiceImpl playerServiceImpl;
@@ -25,8 +26,9 @@ public class PlayerController {
 
 
     @GetMapping("/players")
-    public List<Player> getPlayers() {
-        return playerServiceImpl.allPlayers();
+    public String getAllPlayers(Model model) {
+        model.addAttribute("players",playerServiceImpl.allPlayers());
+        return "home";
     }
 
     @GetMapping("/players/{id}")
