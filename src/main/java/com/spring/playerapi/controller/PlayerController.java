@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/agents")
+@RequestMapping("/api")
 public class PlayerController {
 
     private PlayerServiceImpl playerServiceImpl;
@@ -23,7 +23,7 @@ public class PlayerController {
     }
 
 
-/*
+
     @GetMapping("/players")
     public List<Player> getPlayers() {
         return playerServiceImpl.allPlayers();
@@ -53,5 +53,5 @@ public class PlayerController {
     @DeleteMapping("/removePlayer/{id}")
     public void removePlayer(@PathVariable ("id")int id) {
          playerServiceImpl.deletePlayer(id);
-    }*/
+    }
 }

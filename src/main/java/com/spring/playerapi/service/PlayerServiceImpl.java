@@ -20,29 +20,26 @@ public class PlayerServiceImpl {
         this.playerDAO = playerDAO;
     }
 
-
     public Player getPlayerByName( String playername){
       return   playerDAO.findByName(playername);
     }
 
-
-   /* @Override
     public List<Player> allPlayers() {
         return playerDAO.findAll();
     }
 
-    @Override
+
     public void savePlayer(Player player) {
     playerDAO.save(player);
     }
 
-    @Override
+
     public Player showPlayer(int id) {
         return playerDAO.findById(id).get();
     }
 
-    @Override
+
     public void deletePlayer(int id) {
          playerDAO.deleteById(id);
-    }*/
+    }
 }

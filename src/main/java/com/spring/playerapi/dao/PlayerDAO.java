@@ -10,7 +10,7 @@ import java.util.List;
 public interface PlayerDAO extends JpaRepository<Player,Integer> {
 
     Player findByName(@RequestParam String name);
-    List<Player> findByNameContaining(@RequestParam String name);
+   // List<Player> findByNameContaining(@RequestParam String name);
 
 
     // http://localhost:8080/api/players/search/findByNameContaining?name=Ahmed
