@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 public interface PlayerService {
 
-    public List<Player> getPlayers();
+    public List<Player> allPlayers();
 
-    public void addPlayers(Player player);
+    public void savePlayer(Player player);
 
-    public Player getPlayer(int id);
+    public Player showPlayer(int id);
 
-    public int removePlayer(int id);
+    public int deletePlayer(int id);
 
 }

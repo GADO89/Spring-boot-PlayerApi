@@ -12,30 +12,30 @@ import java.util.List;
 @Transactional
 public class PlayerServiceImpl implements PlayerService{
 
-    @Autowired
     private PlayerDAO playerDAO;
 
-
-    public PlayerServiceImpl() {
+    @Autowired
+    public PlayerServiceImpl(PlayerDAO playerDAO) {
+        this.playerDAO = playerDAO;
     }
 
     @Override
-    public List<Player> getPlayers() {
+    public List<Player> allPlayers() {
         return playerDAO.getPlayers();
     }
 
     @Override
-    public void addPlayers(Player player) {
+    public void savePlayer(Player player) {
     playerDAO.addPlayers(player);
     }
 
     @Override
-    public Player getPlayer(int id) {
+    public Player showPlayer(int id) {
         return playerDAO.getPlayer(id);
     }
 
     @Override
-    public int removePlayer(int id) {
+    public int deletePlayer(int id) {
         return playerDAO.removePlayer(id);
     }
 }
