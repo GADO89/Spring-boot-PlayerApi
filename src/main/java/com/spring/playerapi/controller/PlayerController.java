@@ -31,6 +31,12 @@ public class PlayerController {
         return "home";
     }
 
+    @GetMapping("/player-form")
+    public String playerForm() {
+        return "playerform";
+    }
+
+
     @GetMapping("/players/{id}")
     public Player getPlayerById(@PathVariable("id") int id) {
         Player p= playerServiceImpl.showPlayer(id);
