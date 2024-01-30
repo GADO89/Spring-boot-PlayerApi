@@ -12,25 +12,34 @@
 <body>
 
 <div  class="mydiv head">Add Player</div>
-<div class="mydiv">
+<form th:action="@{/savePlayer}" th:object="${player}" method="post"
+        class="mydiv">
     <div class="input-group mb-3">
+        <div class="input-group-prepend">
         <span class="input-group-text" >@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <input th:field="*{name}" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
     </div>
     <div class="input-group mb-3">
+        <div class="input-group-prepend">
         <span class="input-group-text" >@</span>
-        <input type="text" class="form-control" placeholder="Number" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <input th:field="*{number}" type="text" class="form-control" placeholder="Number" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
+        <div class="input-group-prepend">
         <span class="input-group-text" >@</span>
-        <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <input th:field="*{address}" type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-prepend">
+        <span class="input-group-text" >@</span>
     </div>
-    <button type="button" class="btn btn-primary">Done</button>
-</div>
+    <input th:field="*{phone}" type="text" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <button type="submit" class="btn btn-primary">Done</button>
+</form>
 
 </body>
 </html>

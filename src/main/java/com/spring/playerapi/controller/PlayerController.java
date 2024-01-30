@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 @Controller
 public class PlayerController {
 
@@ -18,12 +17,6 @@ public class PlayerController {
         this.playerServiceImpl = playerServiceImpl;
     }
 
-    @GetMapping("/agent")
-    public Player getPlayerByName(@RequestParam String name){
-        return   playerServiceImpl.getPlayerByName(name);
-    }
-
-
 
     @GetMapping("/players")
     public String getAllPlayers(Model model) {
@@ -32,11 +25,25 @@ public class PlayerController {
     }
 
     @GetMapping("/player-form")
-    public String playerForm() {
-        return "playerform";
+    public String playerForm(Model model) {
+        model.addAttribute("player",new Player());
+        return "player-form";
     }
 
+    @PostMapping("/savePlayer")
+    public String savePlayer(@ModelAttribute Player player) {
+        playerServiceImpl.savePlayer(player);
+        return "redirect:/players";
+    }
 
+}
+
+
+/*
+  @GetMapping("/agent")
+    public Player getPlayerByName(@RequestParam String name){
+        return   playerServiceImpl.getPlayerByName(name);
+    }
     @GetMapping("/players/{id}")
     public Player getPlayerById(@PathVariable("id") int id) {
         Player p= playerServiceImpl.showPlayer(id);
@@ -62,4 +69,4 @@ public class PlayerController {
     public void removePlayer(@PathVariable ("id")int id) {
          playerServiceImpl.deletePlayer(id);
     }
-}
+ */
