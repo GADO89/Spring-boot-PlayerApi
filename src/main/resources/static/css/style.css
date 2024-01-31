@@ -25,5 +25,10 @@ h1
     font-weight: bold;
 }
 .add{
-    margin-left:150px ;
+    margin-left:200px ;
+    margin-top: 5px;
+}
+.mybtn
+{
+    font-size: 14px;
 }

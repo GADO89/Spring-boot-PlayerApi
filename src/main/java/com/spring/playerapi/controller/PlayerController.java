@@ -36,6 +36,13 @@ public class PlayerController {
         return "redirect:/players";
     }
 
+    @GetMapping("/getPlayer")
+    public String getPlayer(@RequestParam("playerId") int id, Model model) {
+        model.addAttribute("player",playerServiceImpl.showPlayer(id));
+        return "player-form";
+    }
+
+
 }
 
 
